@@ -21,6 +21,15 @@ async function getHome(req, res) {
     logger.error(error.message);
   }
 }
+
+function getApp(req, res) {
+  try {
+    res.status(200).render('app');
+  } catch (error) {
+    logger.error(error.message);
+    res.status(500).render('500');
+  }
+}
 async function getFaculty(req, res) {
   try {
     res.status(201).render('faculty');
@@ -164,4 +173,5 @@ module.exports = {
   getTerms,
   getPrivacy,
   postSupport,
+  getApp,
 };

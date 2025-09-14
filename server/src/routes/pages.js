@@ -20,6 +20,7 @@ router.get('/cn', auth, pages.getCn);
 router.get('/placement', auth, pages.getPlacement);
 router.get('/support', auth, pages.getSupport);
 router.get('/team', auth, pages.getTeam);
+router.get('/app', auth, pages.getApp);
 
 router.get('/terms', pages.getTerms);
 router.get('/privacy', pages.getPrivacy);
