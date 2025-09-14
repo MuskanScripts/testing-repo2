@@ -11,7 +11,7 @@ const app = express();
 // Global middleware
 app.use(cookieParser());
 app.use(methodOverride('_method'));
-app.use(express.static(path.join(__dirname, '../public')));
+app.use(express.static(path.join(__dirname, '../../client/public')));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 

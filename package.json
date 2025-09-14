@@ -2,10 +2,10 @@
   "name": "minor",
   "version": "1.0.0",
   "description": "NITJ IT Resource Bank - A comprehensive web application for the IT department of NIT Jalandhar",
-  "main": "src/app.js",
+  "main": "server/src/app.js",
   "scripts": {
-    "start": "node src/app.js",
-    "dev": "nodemon src/app.js",
+    "start": "node server/src/app.js",
+    "dev": "nodemon server/src/app.js",
     "build": "echo 'Build completed'",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
