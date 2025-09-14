@@ -41,6 +41,16 @@ app.use(pagesRoutes);
 app.use(adminRoutes);
 app.use(filesRoutes);
 
+// Serve React SPA at /app
+const fs = require('fs');
+const reactDistPath = path.join(__dirname, '../../client/public/app-dist');
+if (fs.existsSync(reactDistPath)) {
+  app.use('/app', express.static(reactDistPath));
+  app.get('/app/*', (req, res) => {
+    res.sendFile(path.join(reactDistPath, 'index.html'));
+  });
+}
+
 // 404
 app.get('*', (req, res) => {
   try {
