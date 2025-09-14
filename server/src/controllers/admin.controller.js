@@ -1,4 +1,5 @@
 const fs = require('fs');
+const path = require('path');
 const multer = require('multer');
 const FileManager = require('../services/fileManager');
 const { getUsersWithNoPrivileges, getUsersWithPrivileges, removeUserById, updateUserModeById } = require('../models/manageUserAccess');
@@ -49,7 +50,7 @@ async function getFetchFaculty(req, res) {
 
 function getDownloadLog(req, res) {
   try {
-    const logFilePath = './logs/app.log';
+    const logFilePath = path.join(__dirname, '../../logs/app.log');
     if (!fs.existsSync(logFilePath)) {
       return res.status(404).send('File not found.');
     }
