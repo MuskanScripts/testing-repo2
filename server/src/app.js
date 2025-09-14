@@ -24,6 +24,11 @@ hbs.registerPartials(partialPath);
 // DB
 require('./config/db');
 
+// Health check
+app.get('/health', (req, res) => {
+  res.status(200).send('ok');
+});
+
 // Routers
 const authRoutes = require('./routes/auth');
 const pagesRoutes = require('./routes/pages');
